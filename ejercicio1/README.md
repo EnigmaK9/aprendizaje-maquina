@@ -28,13 +28,11 @@ Tienes que especificar
 
 
 ### Ejemplos
-1. tennis.cfg is the 'Play Tennis' example from Machine Learning, by Tom Mitchell, also used by Dr. Lutz Hamel in his lecture notes, both referenced above.
-2. credithistory.cfg is the credit risk assement example from [Artificial Intelligence: Structures and Strategies for Complex Problem Solving (6th Edition), Luger](https://www.amazon.com/Artificial-Intelligence-Structures-Strategies-Complex/dp/0321545893), see Table 10.1 & Figure 10.14 (full text is available online asof 11/19/2017).  
+1. huachicoleo.cfg es el ejemplo de robo de combustible de la clase de Hugo León Estrada
+### Resultados
 
-### Results
-
-![results](https://github.com/tofti/python-trees/blob/master/resources/results.png "Tennis & Credit Assesment Examples")
+![results](https://github.com/EnigmaK9/id3-aprendizaje/blob/master/ejercicio1/recursos/Resultados.png "Ejemplo Robo de Combustible")
 
 ## TODO
-- Add code to classify data.
-- Add code to prune rules (C4.5 modifications)
+- Agregar código para clasificar los datos
+- Agregar código para las reglas de poda (Modificaciones C4.5)
