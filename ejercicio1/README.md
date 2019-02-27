@@ -13,7 +13,7 @@ Donde config.cfg  es un texto plano con el archivo de configuración. El formato
 
 ``
 {
-   'archivo_datos' : '\\resources\\tennis.csv',
+   'archivo_datos' : '\\recursos\\huachicoleo.csv',
    'data_project_columns' : ['Outlook', 'Temperature', 'Humidity', 'Windy', 'PlayTennis'],
    'atributo_objetivo' : 'PlayTennis'
 }
@@ -21,7 +21,7 @@ Donde config.cfg  es un texto plano con el archivo de configuración. El formato
 
 Tienes que especificar
 
- + Direccion relativa al archivo csv archivo_de_datos
+ + Direccion relativa al archivo csv archivo_datos
  + Qué columnas hay que proyectar del archivo (útil cuando tienes un gran archivo de entrada, y solo te interesa un subconjunto de columnas).
  + El Atributo objetivo, el que quieres predecir.
  
