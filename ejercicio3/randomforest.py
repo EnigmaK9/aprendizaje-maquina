@@ -1,64 +1,69 @@
-# Load the library with the iris dataset
+# Carga la biblioteca con el conjunto de datos de los Iris
 from sklearn.datasets import load_iris
 
-# Load scikit's random forest classifier library
+# Carga la biblioteca de clasificacion Random Forest de scikit-learn
 from sklearn.ensemble import RandomForestClassifier
 
-# Load pandas
+# Carga la biblioteca pandas
 import pandas as pd
 
-# Load numpy
+# Carga la biblioteca numpy
 import numpy as np
 
-# Set random seed
+# Configura una semilla aleatoria
 np.random.seed(0)
 
-# Create an object called iris with the iris data
+# Crea un objeto llamado iris con los datos de iris
 iris = load_iris()
 
-# Create a dataframe with the four feature variables
+
+# Crea un panel de datos con las cuatro variables caracteristicas
 df = pd.DataFrame(iris.data, columns=iris.feature_names)
 
-# View the top 5 rows
+# Ver las 5 filas superiores
 df.head()
 
-# Add a new column with the species names, this is what we are going to try to predict
+# Agrega una nueva columna con los nombres de las especies,
 df['species'] = pd.Categorical.from_codes(iris.target, iris.target_names)
 
-# View the top 5 rows
+# Ver las 5 filas superiores
 df.head()
 
 # Create a new column that for each row, generates a random number between 0 and 1, and
-# if that value is less than or equal to .75, then sets the value of that cell as True
-# and false otherwise. This is a quick and dirty way of randomly assigning some rows to
-# be used as the training data and some as the test data.
+# Crea una nueva columna para cada fila, genera un numero aleatorio entre 0 y 1 y 
+# si el valor es menor o mayor a 0.75, entonces configura el valor de esa celda como verdadero
+# y falso en cualquier otro caso. Esto es una manera rapida y sucia de asignar algunas filas
+# para ser usadas como los datos de entrenamiento y algunos para ser usados como los datos de prueba.
+
 df['is_train'] = np.random.uniform(0, 1, len(df)) <= .75
 
-# View the top 5 rows
+# Ver las 5 filas superiores
 df.head()
 
 
-# Create two new dataframes, one with the training rows, one with the test rows
+
+# Crea dos nuevos paneles de datos, uno con las filas de entrenamiento, otro con las filas de prueba
 train, test = df[df['is_train']==True], df[df['is_train']==False]
 
 
 
-# Show the number of observations for the test and training dataframes
+# Muestran los numeros de observaciones para los paneles de datos de entreneamiento y prueba
 print('Numero de observaciones en los datos de entrenamiento:', len(train))
 print('Numero de observaciones en los datos de prueba:',len(test))
 
 
-# Create a list of the feature column's names
+# Crea una lista de los nombres de las columnas caracteristicas
+
 features = df.columns[:4]
 
-# View features
+# Ve las caracteristicas
 features
-# train['species'] contains the actual species names. Before we can use it,
-# we need to convert each species name into a digit. So, in this case there
-# are three species, which have been coded as 0, 1, or 2.
+# Entrena ['especies'] cotnieene los nombres de las especies. Antes de poder usarlas
+# Necesitamox convertir cada nombre de especies en un digito. Entocnes, en este caso hay
+# tres especies, que han sido codificadas entre 0,1 o 2.
 y = pd.factorize(train['species'])[0]
 
-# View target
+# Ve el atributo objetivo
 y
 # Create a random forest Classifier. By convention, clf means 'Classifier'
 clf = RandomForestClassifier(n_jobs=2, random_state=0)
