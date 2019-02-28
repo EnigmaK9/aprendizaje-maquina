@@ -29,7 +29,6 @@ df['species'] = pd.Categorical.from_codes(iris.target, iris.target_names)
 # Ver las 5 filas superiores
 df.head()
 
-# Create a new column that for each row, generates a random number between 0 and 1, and
 # Crea una nueva columna para cada fila, genera un numero aleatorio entre 0 y 1 y 
 # si el valor es menor o mayor a 0.75, entonces configura el valor de esa celda como verdadero
 # y falso en cualquier otro caso. Esto es una manera rapida y sucia de asignar algunas filas
@@ -65,35 +64,43 @@ y = pd.factorize(train['species'])[0]
 
 # Ve el atributo objetivo
 y
-# Create a random forest Classifier. By convention, clf means 'Classifier'
+
+# Crea un clasificador random forest. Por convencion, clf significa 'clasificador'
 clf = RandomForestClassifier(n_jobs=2, random_state=0)
 
-# Train the Classifier to take the training features and learn how they relate
-# to the training y (the species)
+ 
+# Entrena el clasificador para tomar las caracteristicas de entrenamiento y aprender como
+# se mezclan con el entrenamiento y (las especies)
 clf.fit(train[features], y)
 
-# Apply the Classifier we trained to the test data (which, remember, it has never seen before)
+# Aplica el clasificador que entrenamos a los datos de prueba ( que nunca ha sido visto antes)
 clf.predict(test[features])
-# View the predicted probabilities of the first 10 observations
+
+# Ve las probabilidades predecidas para las 10 primeras observaciones
 clf.predict_proba(test[features])[0:10]
 
-# Create actual english names for the plants for each predicted plant class
+
+# Crea nombres ingleses para las plantas para cada clase de planta predecida
 preds = iris.target_names[clf.predict(test[features])]
 
 
-# View the PREDICTED species for the first five observations
+
+# Ve las especies predecidas para las primeras 5 observaciones
 preds[0:5]
 
 
-# View the ACTUAL species for the first five observations
+
+# Ve las especies actuale para las primeras cinco observaciones
 test['species'].head()
 
 
 
-# Create confusion matrix
+
+# Crea la matriz de confusion
 pd.crosstab(test['species'], preds, rownames=['Actual Species'], colnames=['Predicted Species'])
 
 
-# View a list of the features and their importance scores
+
+# Ve una lista de las caracteristicas y sus puntuaciones de importancia
 list(zip(train[features], clf.feature_importances_))
 
