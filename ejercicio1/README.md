@@ -3,13 +3,13 @@ Implementación en python de los [ Arboles de clasificación ID3](https://en.wik
 
 El algoritmo es recursivo, que particiona un conjunto de datos sobre el atributo que maximiza la ganancia de información. La ganancia de información del atributo A está definida como la diferencia entre la entropía de un conjunto de datos S y el tamaño medio de los pesos de la entropía para los subconjuntos S'de S cuando se dividen en el atributo A.
 
-La implementación fue solicitadad por [Luis Hugo León]. Un texto muy citado para el algoritmo ID3 es el de [Tom Mitchell](https://www.amazon.com/Machine-Learning-Tom-M-Mitchell/dp/0070428077) 
+La implementación fue solicitada por [M. C. Luis Hugo León Estrada]. Un texto muy citado para el algoritmo ID3 es el de [Tom Mitchell](https://www.amazon.com/Machine-Learning-Tom-M-Mitchell/dp/0070428077) 
 ## Ejecutando el código
 Se ejecuta el código proporcionado con el intérprete de Python:
 
 ```python id3.py ./recursos/<config.cfg>```
 
-Donde config.cfg  es un texto plano con el archivo de configuración. El formato del archivo de configuración es un arbol sintactico abstracto de python representando un conjunto de datos con los siguientes campos:
+Donde config.cfg  es un texto plano con el archivo de configuración. El formato del archivo de configuración es un árbol sintáctico abstracto de Python 3.7 representando un conjunto de datos con los siguientes campos:
 
 ``
 {
@@ -23,20 +23,20 @@ Donde config.cfg  es un texto plano con el archivo de configuración. El formato
 
 Tienes que especificar
 
- + Direccion relativa al archivo csv archivo_datos
+ + Dirección relativa al archivo csv archivo_datos.
  + Qué columnas hay que proyectar del archivo (útil cuando tienes un gran archivo de entrada, y solo te interesa un subconjunto de columnas).
- + El Atributo objetivo, el que quieres predecir.
+ + El atributo objetivo, el que quieres predecir.
  
 
 
 ### Ejemplos
-1. huachicoleo.cfg es el ejemplo de robo de combustible de la clase de Hugo León Estrada
+1. huachicoleo.cfg es el ejemplo de robo de combustible de la clase de Hugo León Estrada.
 
 
 ### Resultados
 
-![results](https://github.com/EnigmaK9/id3-aprendizaje/blob/master/ejercicio1/recursos/Resultados.png "Ejemplo Robo de Combustible")
+![results](https://github.com/EnigmaK9/id3-aprendizaje/blob/master/ejercicio1/recursos/Resultados.png "Ejemplo 'Robo de Combustible'")
 
 ## TODO
-- Agregar código para clasificar los datos
-- Agregar código para las reglas de poda (Modificaciones C4.5)
+- Agregar código para clasificar los datos.
+- Agregar código para las reglas de poda (Modificaciones C4.5).
