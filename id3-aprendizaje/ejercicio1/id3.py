@@ -110,7 +110,7 @@ def particion_datos(datos, group_att):
 
 
 def promedio_entropia_w_particiones(datos, splitting_att, atributo_objetivo):
-    # find uniq values of splitting att
+    # encuentra valores unicos para particionar atributos
     datos_rows = datos['rows']
     n = len(datos_rows)
     particiones = particion_datos(datos, splitting_att)
