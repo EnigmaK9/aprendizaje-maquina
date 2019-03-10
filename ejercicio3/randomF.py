@@ -26,4 +26,4 @@ rf = RandomForestClassifier(n_estimators=100)
 rf.fit(X_train,y_train)
 y_pred = rf.predict(X_test)
 
-print("Precisio'n:",metrics.accuracy_score(y_test, y_pred))
+print("Precision:",metrics.accuracy_score(y_test, y_pred))
