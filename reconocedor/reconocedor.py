@@ -1,7 +1,65 @@
+from random import random
+
 try:
 	import Tkinter
 except ImportError:
 	raise ImportError,"Se debe instalar el modulo Tkinter"
+
+D1=[1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0]
+D2=[0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0]
+D3=[0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0]
+D4=[1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0]
+D5=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+
+X1=[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1]
+X2=[0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1]
+X3=[1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+X4=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+X5=[1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+
+J1=[1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0]
+J2=[1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0]
+J3=[0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0]
+J4=[1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0]
+J5=[1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0]
+
+G1=[1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0]
+G2=[1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1]
+G3=[1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1]
+G4=[1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1]
+G5=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0]
+bias=[0.5,0.5]
+w=[[random() for i in range(42)],[random() for i in range(42)]]
+targets=[[0,0],[0,1],[1,0],[1,1]]
+e=[0,0]
+
+def creaListaEntrenamiento():
+	return [D1,D2,D3,D4,D5,X1,X2,X3,X4,X5,J1,J2,J3,J4,J5,G1,G2,G3,G4,G5]
+
+def hardlim(n):
+	a=[0 for i in n]
+	for i in range(len(n)):
+		if n[i]>=0:
+			a[i]=1
+		else:
+			a[i]=0
+	return a
+
+def error(targets,a,i):
+	e=[0 for j in range(len(a))]
+	if 0<=i<5:
+		for j in range(len(e)):
+			e[j]=targets[0][j]-a[j]
+	elif 5<=i<10:
+		for j in range(len(e)):
+			e[j]=targets[1][j]-a[j]
+	elif 10<=i<15:
+		for j in range(len(e)):
+			e[j]=targets[2][j]-a[j]
+	elif 15<=i<20:
+		for j in range(len(e)):
+			e[j]=targets[3][j]-a[j]
+	return e
 
 vector = [0 for i in range(42)]
 #print vector
@@ -11,20 +69,67 @@ def insertaValor(posicion, boton):
 		vector[posicion]=1
 		boton.configure(text="1")
 		boton.configure(highlightbackground="black")
-		print "Vector actual"
-		print vector
+		boton.configure(background="black")
+		#print "Vector actual"
+		#print vector
 	else:
 		vector[posicion]=0
 		boton.configure(text="0")
 		boton.configure(highlightbackground="white")
-		print "Vector actual"
-		print vector
+		boton.configure(background="white")
+		#print "Vector actual"
+		#print vector
 
-def reconoce():
-	print "Algoritmo para reconocer"
+def obtieneN(w,vector,bias):
+	n=[0 for i in bias]
+	for i in range(len(w[0])):
+		n[0]=n[0]+w[0][i]*vector[i]
+		n[1]=n[1]+w[1][i]*vector[i]
+	print "Imprimiendo n"
+	print n
+	for i in range(len(n)):
+		n[i]=n[i]+bias[i]
+	return n
+               
+def updateW(w,e,vector):
+	for i in range(len(vector)):
+		w[0][i]=w[0][i]+vector[i]*e[0]
+		w[1][i]=w[1][i]+vector[i]*e[1]
+	return w
+
+def updateBias(bias,e):
+	for i in range(len(bias)):
+		bias[i]=bias[i]+e[i]
+		print "Bias"
+		print bias
+	return bias
+
+def entrenamiento(w,bias,e):
+	et=1
+	it=0
+
+	while et!=0:
+		et=0
+		it+=1
+		print "Iteracion {}".format(it)
+		letras=creaListaEntrenamiento()
+		for letra in letras:
+			n=obtieneN(w,letra,bias)
+			print "N"
+			print n
+			a=hardlim(n)
+			print "AAA"
+			print a
+			e=error(targets,a,letras.index(letra))
+			if e!=0:
+				w=updateW(w,e,vector)
+				bias=updateBias(bias,e)
+				et+=1
+
+entrenamiento(w,bias,e)
 
 root=Tkinter.Tk()
-root.title("Baby apesta")
+root.title("Reconocedor")
 root.geometry("300x300+500-300")
 etiqueta=Tkinter.Label(root, text="Introduce el patr'on dando click en los botones")
 etiqueta.pack()
@@ -126,7 +231,7 @@ boton64.place(x=175,y=215)
 boton65=Tkinter.Button(root,text="0",command=lambda:insertaValor(41,boton65))
 boton65.place(x=215,y=215)
 
-botonPatron=Tkinter.Button(root, text="Reconoce patron", command=lambda:reconoce())
+botonPatron=Tkinter.Button(root, text="Reconoce patron", command=lambda:reconoce(vector))
 botonPatron.place(x=90,y=245)
 
 root.mainloop()
