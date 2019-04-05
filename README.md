@@ -7,3 +7,6 @@ En la carpeta ejercicio2 se encuentra 'Algoritmo ID3 utilizando alguna librerÄ±Ì
 
 
 En la carpeta ejercicio3 se encuentra 'Clasificador Random Forest"
+# Neural Networks
+
+En la carpeta 'reconocedor' se encuentra el proyecto 2
