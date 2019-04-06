@@ -84,8 +84,8 @@ def obtieneN(w,vector,bias):
 	for i in range(len(w[0])):
 		n[0]=n[0]+w[0][i]*vector[i]
 		n[1]=n[1]+w[1][i]*vector[i]
-	print "Imprimiendo n"
-	print n
+	#print "Imprimiendo n"
+	#print n
 	for i in range(len(n)):
 		n[i]=n[i]+bias[i]
 	return n
@@ -94,16 +94,17 @@ def updateW(w,e,vector):
 	for i in range(len(vector)):
 		w[0][i]=w[0][i]+vector[i]*e[0]
 		w[1][i]=w[1][i]+vector[i]*e[1]
-	print "--->Imprime w {}".format(w)
+	#print "--->Imprime w {}".format(w)
 	return w
 
 def updateBias(bias,e):
 	for i in range(len(bias)):
 		bias[i]=bias[i]+e[i]
-		print "Bias"
-		print bias
+		#print "Bias"
+		#print bias
 	return bias
 
+it=0
 while e[0]!=0 or e[1]!=0:
 	for letra in letras:
 		n=obtieneN(w,letra,bias)
@@ -112,7 +113,9 @@ while e[0]!=0 or e[1]!=0:
 		if e[0]!=0 or e[1]!=1:
 			w=updateW(w,e,letra)
 			bias=updateBias(bias,e)
+	it+=1
 print "Peso despues de entrenamiento {}, bias final: {}, error= {}".format(w,bias,e)
+print "Iteraciones={}".format(it)
 
 def reconoce(vector):
 	n=obtieneN(w,vector,bias)
