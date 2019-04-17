@@ -83,6 +83,7 @@ it1=[]
 itn=[]
 e=1
 while(e>0.001):
+	itn=[]
 	for valor in a:
 		#print "valor={}".format(valor)
 		f1=forward1(w1,valor,b1)
@@ -99,8 +100,7 @@ while(e>0.001):
 			it0.append(f2)
 		if it==1:
 			it1.append(f2)
-		if it==6:
-			itn.append(f2)
+		itn.append(f2)
 	print "iteracion={}".format(it)
 	it+=1
 
@@ -115,13 +115,13 @@ print "b1={}".format(b1)
 print "b2={}".format(b2)
 print "error={}".format(e)
 #print it0
-
+itn.sort()
 #Crear gr'aficas
 t = np.linspace(-2, 2, 21,endpoint=True)
 pl.plot(t,objetivo(t),label="f(p)")
 pl.plot(t,it0,label="it0")
 pl.plot(t,it1,label="it1")
-pl.plot(t,itn,label="it6")
+pl.plot(t,itn,label="it{}".format(it))
 pl.legend()
 pl.show()
 
