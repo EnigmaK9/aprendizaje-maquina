@@ -115,7 +115,7 @@ print "b1={}".format(b1)
 print "b2={}".format(b2)
 print "error={}".format(e)
 #print it0
-itn.sort()
+
 #Crear gr'aficas
 t = np.linspace(-2, 2, 21,endpoint=True)
 pl.plot(t,objetivo(t),label="f(p)")
