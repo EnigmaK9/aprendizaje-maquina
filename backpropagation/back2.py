@@ -21,10 +21,10 @@ if neuronas==2:
 	w2=[0.09,-0.17]
 	b2=0.48
 else:
-	w1=[rd.randrange(-1,1) for _ in range(neuronas)]
-	w2=[rd.uniform(-1,1) for _ in range(neuronas)]
-	b1=[rd.uniform(-1,1) for _ in range(neuronas)]
-	b2=rd.uniform(-1,1)
+	w1=[rd.uniform(-0.5,0.5) for _ in range(neuronas)]
+	w2=[rd.uniform(-0.5,0.5) for _ in range(neuronas)]
+	b1=[rd.uniform(-0.5,0.5) for _ in range(neuronas)]
+	b2=rd.uniform(-0.5,0.5)
 
 
 def logsig(x):
@@ -114,8 +114,8 @@ while(e>0.001):
 			itn.append(f2)
 	print "iteracion={}".format(it)
 	it+=1
-	if it==300000:
-		break
+#	if it==300000:
+#		break
 
 # print "it={}".format(it)
 # print "f1={}".format(f1)
