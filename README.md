@@ -10,3 +10,8 @@ En la carpeta ejercicio3 se encuentra 'Clasificador Random Forest"
 # Neural Networks
 
 En la carpeta 'reconocedor' se encuentra el proyecto 2
+
+# Back-prograpation
+
+En la carpeta 'backpropagation' se encuentra el proyecto de 'Redes Neuronales Multicapa utilizando el
+algoritmo backpropagation'.
