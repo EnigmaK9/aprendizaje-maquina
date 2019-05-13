@@ -1,0 +1,41 @@
+digraph ID3_Tree {
+"0" [shape=box, style=filled, label="Nivel de ventas
+", weight=1]
+"1" [shape=box, style=filled, label="No. de ejemplares
+", weight=2]
+0 -> 1 [ label = "Bajas"];
+"2" [shape=box, style=filled, label="Precio
+", weight=3]
+1 -> 2 [ label = "<=4"];
+"3" [shape=box, style=filled, label="no
+(1)
+", weight=4]
+2 -> 3 [ label = "<=150"];
+"4" [shape=box, style=filled, label="no
+(1/1)
+", weight=4]
+2 -> 4 [ label = ">150"];
+"5" [shape=box, style=filled, label="si
+(2)
+", weight=3]
+1 -> 5 [ label = ">4"];
+"6" [shape=box, style=filled, label="si
+(4)
+", weight=2]
+0 -> 6 [ label = "Buenas"];
+"7" [shape=box, style=filled, label="Precio
+", weight=2]
+0 -> 7 [ label = "Promedio"];
+"8" [shape=box, style=filled, label="no
+(2)
+", weight=3]
+7 -> 8 [ label = "<=150"];
+"9" [shape=box, style=filled, label="si
+(1)
+", weight=3]
+7 -> 9 [ label = ">150"];
+{rank=same; 0;};
+{rank=same; 1;6;7;};
+{rank=same; 2;5;8;9;};
+{rank=same; 3;4;};
+}
