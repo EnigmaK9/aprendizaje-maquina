@@ -1,9 +1,10 @@
 import random
 
+# Funcion que aniade ceros a la lista hasta que tenga una longitud de 4
 def compLis(l):
 	while len(l)!=4:
 		l.append(0)
-
+# Funcion que convierte un numero entero en binario y lo devuelve en forma de lista
 def convBin(coef):
 	valores = []
 	while coef/2 != 0:
@@ -14,8 +15,7 @@ def convBin(coef):
 	compLis(valores)
 	valores.reverse()
 	return valores
-
-#Funci'on para seleccionar n'umeros correctos
+#Funcion para seleccionar numeros correctos
 a=0
 b=0
 c=0
@@ -32,7 +32,7 @@ pobDec=[]
 listaEvaluacion=[]
 listaEsperado=[]
 listaAcumulado=[]
-
+# Funcion que devuelve True si la suma de a, b, c, d es mayor que 10 o igual a 0
 def valNums(a,b,c,d):
 	return False if ((a+b+c+d)<=10 and (a+b+c+d)!=0) else True
 
