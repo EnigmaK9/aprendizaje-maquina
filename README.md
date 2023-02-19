@@ -29,7 +29,7 @@ Asegúrese de tener instalado el intérprete de Python 2.7. Si aún no lo ha ins
 Abra una terminal de Windows y/o Linux y utilice ```pip install random``` para descargar la biblioteca asociada al programa.
 
 Ejecute el archivo descargado ag.py en la terminal de Windows y/o Linux utilizando el comando ```python ag.py```
-## Descripción del programa
+## Descripción del programa de algoritmos genéticos
 Este programa implementa el algoritmo genético (AG) para el aprendizaje automático con árboles de decisión basados en el algoritmo ID3. El programa lee un conjunto de datos de entrenamiento desde un archivo y utiliza el algoritmo genético para construir un árbol de decisión que pueda clasificar correctamente los datos de prueba.
 
 El algoritmo genético es utilizado para generar una población de árboles de decisión, la cual es evaluada mediante la función de aptitud que mide la precisión de cada árbol en el conjunto de datos de prueba. Los árboles más precisos son seleccionados y utilizados para generar la siguiente generación de árboles a través de operaciones de reproducción, mutación y cruce. El proceso se repite hasta que se alcanza un criterio de parada, como un número máximo de generaciones o una precisión aceptable.
