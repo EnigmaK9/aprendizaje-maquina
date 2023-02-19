@@ -18,3 +18,16 @@ algoritmo backpropagation'.
 
 # Algoritmos Genéticos
 En la carpeta 'AG' se encuentra el proyecto de 'Algoritmos genéticos' relacionado al curso de Aprendizaje 2019-2
+
+Para utilizar este repositorio, siga los siguientes pasos:
+
+Descargue el archivo del repositorio: 
+```https://github.com/EnigmaK9/id3-aprendizaje/```
+
+Asegúrese de tener instalado el intérprete de Python 2.7. Si aún no lo ha instalado, puede descargarlo de https://www.python.org/.
+
+Abra una terminal de Windows y/o Linux y utilice ```pip install random``` para descargar la biblioteca asociada al programa.
+
+Ejecute el archivo descargado ag.py en la terminal de Windows y/o Linux utilizando el comando ```python ag.py```
+
+
