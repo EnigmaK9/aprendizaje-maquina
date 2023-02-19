@@ -119,34 +119,71 @@ def creaPoblacion():
 
     global pobBin, pobDec
     for i in range(50):
-    pobBin.append(creaIndividuoBin())
-    pobDec.append(creaIndividuoDec())
+        pobBin.append(creaIndividuoBin())
+        pobDec.append(creaIndividuoDec())
     evaluaIn()
 
-# Evaluar a los individuos
-
-
+#Evaluar a los individuos
 def evaluaIn():
+	global pobDec,listaEvaluacion
+	listaEvaluacion.append(f_objetivo())
 
+#Selecciona individuos Ruleta
+def sumaApt():
+	global listaEvaluacion,sumaAptitudes
+	for i in range(len(listaEvaluacion)):
+		sumaAptitudes+=listaEvaluacion[i]
 
-    global pobDec, lista
+def valorEsperado():
+	global listaEsperado,listaEvaluacion,sumaAptitudes,f_tot
+	f_tot=sumaAptitudes/50
+	for i in range(len(listaEvaluacion)):
+		listaEsperado.append(listaEvaluacion[i]/f_tot)
+	x=0
+	for i in range(len(listaEsperado)):
+		x+=listaEsperado[i]
+	#print "Suma lista valor esperado={}".format(x)
+
+def valorAcumulado():
+	global listaEsperado,listaAcumulado
+	for i in range(len(listaEsperado)):
+		listaAcumulado.append(listaEsperado[0]) if i==0 else listaAcumulado.append(listaAcumulado[i-1]+listaEsperado[i])
+		#print listaAcumulado[i]
+	#print "Ultimo valor listaAcumulado={}".format(listaAcumulado[49])
+
+def seleccion():
+	global listaAcumulado,pobDec
+	pobNue=[]
+	l=[random.uniform(0,50) for i in range(50)]
+	for i in range(len(l)):
+		for j in range(len(l)):
+			if listaAcumulado[j]>l[i]:	
+				pobNue.append(pobDec[j])
+				break
+	pobDec=pobNue
+	#print pobDec
+	#print "Taman'o poblacion en seleccion={}".format(len(pobDec))
+	#print l
+	
+#Operador cruza: 2 puntos
+#Siempre se utilizaran los mismos 2 puntos para garantizar que se
+#generen 3 segmentos a intercambiar.
 
 
 def reemplazaPadres(p1, p2):
-
 
     global pobBin, pobDec
     h1 = []
     h2 = []
     for i in range(4):
-    h1.append(p1[i][:2] + p2[i][2:])
-    h2.append(p2[i][:2] + p1[i][2:])
-    pobBin.append(h1)
-    pobBin.append(h2)
-    pobDec.append([int("".join(str(x) for x in h1[0]), 2), int("".join(str(x) for x in h1[1]), 2), int(
-        "".join(str(x) for x in h1[2]), 2), int("".join(str(x) for x in h1[3]), 2)])
-    pobDec.append([int("".join(str(x) for x in h2[0]), 2), int("".join(str(x) for x in h2[1]), 2), int(
-        "".join(str(x) for x in h2[2]), 2), int("".join(str(x) for x in h2[3]), 2)])
+        h1.append(p1[i][:2] + p2[i][2:])
+        h2.append(p2[i][:2] + p1[i][2:])
+        pobBin.append(h1)
+        pobBin.append(h2)
+        pobDec.append([int("".join(str(x) for x in h1[0]), 2), int("".join(str(x) for x in h1[1]), 2), int(
+            "".join(str(x) for x in h1[2]), 2), int("".join(str(x) for x in h1[3]), 2)])
+        pobDec.append([int("".join(str(x) for x in h2[0]), 2), int("".join(str(x) for x in h2[1]), 2), int(
+            "".join(str(x) for x in h2[2]), 2), int("".join(str(x) for x in h2[3]), 2)])
 
 # Operador mutacion
 # Elige aleatoriamente un gen de un individuo y lo cambia por otro valor.
