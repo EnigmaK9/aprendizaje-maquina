@@ -22,7 +22,7 @@ En la carpeta 'AG' se encuentra el proyecto de 'Algoritmos genéticos' relaciona
 Para utilizar este repositorio, siga los siguientes pasos:
 
 Descargue el archivo del repositorio: 
-```https://github.com/EnigmaK9/id3-aprendizaje/```
+```https://github.com/EnigmaK9/aprendizaje-maquina/```
 
 Asegúrese de tener instalado el intérprete de Python 2.7. Si aún no lo ha instalado, puede descargarlo de https://www.python.org/.
 
